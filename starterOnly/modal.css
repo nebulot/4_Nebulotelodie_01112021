@@ -2,12 +2,14 @@
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
+  --end-duration: 0.8s;
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 /* Landing Page */
 
 body {
@@ -98,6 +100,8 @@ img {
     float: right;
     display: block;
     margin-top: -15px;
+    color: #fe142f;
+    font-size: 1.1rem;
   }
 } 
 
@@ -157,7 +161,7 @@ main {
   font-size: 16px;
 }
 
-.bground {
+.bground, .bground-end {
   display: none;
   position: fixed;
   z-index: 1;
@@ -169,7 +173,7 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content {
+.content, .content-end {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -232,6 +236,7 @@ input[data-error]::after {
     font-size: 0.4em;
     color: red;
 } */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -333,6 +338,24 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+//* merci close */
+
+.text-end {
+  color: #c4c4c4;
+  text-align: center;
+}
+
+.end-body {
+  height: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto 50px;
+}
+
+
 /* custom select styles */
 .custom-select {
   position: relative;
