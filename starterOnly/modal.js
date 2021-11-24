@@ -29,11 +29,25 @@ document.getElementById("closeForm")
   modalbg.style.display = "none";
 });
 
-// Creation de la fonction message erreur 
+// variable de saisie boolean 
+var b_first=false; var b_last=false; var b_email=false; 
+var b_birthdate=false; var b_quantity=false; var b_checkbox1=false; 
 
+// On définit la fonction message erreur 
+function send()
+{
+  if(b_first==true && b_last==true && b_email==true && b_birthdate==true && b_quantity==true && b_checkbox1=true)
+  {
+document.getElementById("message").innerText="Envoi serveur";
+//document.getElementById("inscription").onsubmit();
+  }
+  else
+  {
+    document.getElementById("message").innerText="Le formulaire n'est pas complet";
+  }
 
-// chargement des messages erreurs dans un ordre bien précis
-document.getElementById("inscription").addEventListener("click", function(msgError) {
+  document.getElementById("message").innerText += "-" + b_first + "-" + b_last + "-" + b_email + "-" + b_birthdate + "-" + b_quantity + "-" + b_checkbox1;
+}
 
 // fermer via fermer
 document
