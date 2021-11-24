@@ -29,25 +29,23 @@ document.getElementById("closeForm")
   modalbg.style.display = "none";
 });
 
-// variable de saisie boolean 
-var b_first=false; var b_last=false; var b_email=false; 
-var b_birthdate=false; var b_quantity=false; var b_checkbox1=false; 
+// validation du formulaire 
+const form = document.body.querySelector("form");
 
-// On définit la fonction message erreur 
-function send()
-{
-  if(b_first==true && b_last==true && b_email==true && b_birthdate==true && b_quantity==true && b_checkbox1=true)
-  {
-document.getElementById("message").innerText="Envoi serveur";
-//document.getElementById("inscription").onsubmit();
-  }
-  else
-  {
-    document.getElementById("message").innerText="Le formulaire n'est pas complet";
-  }
+form.addEventListener(
+  "submit",
+  formValidation
+);
 
-  document.getElementById("message").innerText += "-" + b_first + "-" + b_last + "-" + b_email + "-" + b_birthdate + "-" + b_quantity + "-" + b_checkbox1;
+function formValidation(event) {
+  event.preventDefault();
+
+  const [input] = form.elements;
+  console.log(form.elements, input);
 }
+
+
+
 
 // fermer via fermer
 document

@@ -53,7 +53,7 @@
     <div class="bground">
       <div class="content">
         <span class="close" id="closeForm"></span>
-        <div id="message">
+       
           <div class="modal-body">
             <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
               <div class="formData">
@@ -62,7 +62,7 @@
               </div>
               <div class="formData">
                 <label for="last">Nom</label><br>
-                <input class="text-control" type="text" id="last" name="last" required /><br>
+                <input class="text-control" type="text" id="last" name="last" minlength="2" required /><br>
               </div>
               <div class="formData">
                 <label for="email">E-mail</label><br>
@@ -123,10 +123,10 @@
           </div>
         </div>
       </div>
-    </div>
+    
 
     <div id="bgroundEnd">
-      <input class="btn-submit click-end" id="close" type="submit" value="Fermer" onclick="envoyer"() />
+      <input class="btn-submit click-end" id="close" type="submit" value="Fermer"  />
     </div>
 
   </main>
