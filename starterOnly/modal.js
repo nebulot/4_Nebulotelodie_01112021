@@ -78,6 +78,7 @@ if (checkbox1.value) {
   checkbox1.oninvalid = function(inputMsg) {
     errorMessage(inputMsg, formMsg, "Vous devez cocher la case des Conditions Générales.")
   };
+  return false;
 }
 else {
   clickEnd.forEach((btn) => btn.addEventListener("click", launchSubmit));
