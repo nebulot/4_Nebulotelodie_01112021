@@ -25,93 +25,54 @@ function launchModal() {
 // fermer formulaire  via croix
 document
   .getElementById("closeForm")
-  .addEventListener("click", function (close) {
+  .addEventListener("click", function (_close) {
     modalbg.style.display = "none";
   });
 
 // fermer via fermer
 document
   .querySelector(".click-end")
-  .addEventListener("click", function (close) {
+  .addEventListener("click", function (_close) {
     clickEnd.style.display = "none";
     modalbg.style.display = "none";
   });
 
-//creation de la function erreur message
+//messages d'erreur personnalisés
 
-function errorMsg(inputMsg, formMsg, msg) {
-  inputMsg.target.setCustomValidity("");
-  if (inputMsg.target.valid && inputMsg.target.value.length == 0) {
-    inputMsg.target.setCustomValidity("msg");
+function validateForm() {
+  if (document.getElementById("first").value == "") {
+    document.getElementById("firstError").innerHTML =
+      "Veuillez saisir au minimum 2 caractères dans le champ.";
+    return false;
   }
+  if (document.getElementById("last").value == "") {
+    document.getElementById("lastError").innerHTML =
+      "Veuillez saisir au minimum 2 caractères dans le champ.";
+    return false;
+  }
+  if (document.getElementById("email").value == "") {
+    document.getElementById("emailError").innerHTML =
+      "Veuillez saisir au minimum 2 caractères dans le champ.";
+    return false;
+  }
+  if (document.getElementById("birthdate").value == "") {
+    document.getElementById("birthdateError").innerHTML =
+      "Veuillez saisir au minimum 2 caractères dans le champ.";
+    return false;
+  }
+  if (document.getElementById("location").value == "") {
+    document.getElementById("locationError").innerHTML =
+      "Veuillez saisir au minimum 2 caractères dans le champ.";
+    return false;
+  } else document.getElementById("myForm").innerHTML = "";
+  alert("le formulaire ne peut pas être envoyé");
+  return true;
 }
 
-// message d'erreur "formMsg" par case "inputMsg"
-
-document
-  .getElementById("inscription")
-  .addEventListener("click", function (formMsg) {
-    const first = document.getElementById("first");
-    const last = document.getElementById("last");
-    const email = document.getElementById("email");
-    const quantity = document.getElementById("quantity");
-    const checkbox1 = document.getElementById("checkbox1");
-
-    if (first.value) {
-      first.oninvalid = function (inputMsg) {
-        errorMsg(
-          inputMsg,
-          formMsg,
-          "Veuillez saisir au minimum 2 caractères dans le champ."
-        );
-      };
-      return false;
-    }
-    if (last.value) {
-      last.oninvalid = function (inputMsg) {
-        errorMessage(
-          inputMsg,
-          formMsg,
-          "Veuillez saisir au minimum 2 caractères dans le champ."
-        );
-      };
-      return false;
-    }
-    if (email.value) {
-      email.oninvalid = function (inputMsg) {
-        errorMessage(
-          inputMsg,
-          formMsg,
-          "Veuillez saisir une adresse valide."
-        );
-      };
-      return false;
-    }
-    if (quantity.value) {
-      quantity.oninvalid = function (inputMsg) {
-        errorMessage(
-          inputMsg,
-          formMsg,
-          "Veuillez choisir une valeur numérique."
-        );
-      };
-      return false;
-    }
-    if (checkbox1.value) {
-      checkbox1.oninvalid = function (inputMsg) {
-        errorMessage(
-          inputMsg,
-          formMsg,
-          "Vous devez vérifier que vous acceptez les termes et conditions."
-        );
-      };
-      return false;
-      
-    } else {
-      clickEnd.forEach((btn) => btn.addEventListener("click", launchSubmit));
-      function launchSubmit() {
-        clickEnd.style.display = "block";
-      }
-      formMsg.preventDefault();
-    }
-  });
+function disableSubmit(disabled) {
+  if (disabled) {
+    document.getElementById("inscription").setAttribute("disabled", true);
+  } else {
+    document.getElementById("inscription").removeAttribute("disabled");
+  }
+}
