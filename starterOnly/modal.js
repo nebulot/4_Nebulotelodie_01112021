@@ -41,44 +41,66 @@ document
 // messages d'erreur personnalisés
 document.getElementById("myForm").addEventListener("submit",valider,false);
 
+function valider() 
+{
+  let estValide = true
+  
+  let first = document.getElementById("first").value;
+  let last = document.getElementById("last").value;
+  let email = document.getElementById("email").value;
+  let birthdate = document.getElementById("birthdate").value;
+  let quantity = document.getElementById("quantity").value;
+  let location = document.getElementById("location").value;
+  let checkbox1 = document.getElementById("checkbox1").value;
 
 
 
-function validateForm() {  
-  if (document.getElementById("first").value == "") {
+  if (first.length == 2)
+  {
     document.getElementById("firstError").innerHTML =
-      "Veuillez saisir au minimum 2 caractères dans le champ.";
-    return false;
+    "Veuillez saisir au minimum 2 caractères dans le champ.";
+    estValide=false;
   }
-  if (document.getElementById("last").value == "") {
-    document.getElementById("lastError").innerHTML =
-      "Veuillez saisir au minimum 2 caractères dans le champ.";
-    return false;
+ if (last.length == 2)
+  {
+    document.getElementById("lastError").innerHTML = 
+    "Veuillez saisir au minimum 2 caractères dans le champ.";
+    estValide=false;
   }
-  if (document.getElementById("email").value == "") {
-    document.getElementById("emailError").innerHTML =
-      "Veuillez saisir une adresse email valide.";
-    return false;
-  }
-  if (document.getElementById("birthdate").value == "") {
-    document.getElementById("birthdateError").innerHTML =
-      "Veuillez saisir votre date de naissance.";
-    return false;
-  }
-  if (document.getElementById("quantity").value == "") {
-    document.getElementById("quantityError").innerHTML =
-      "Veuillez choisir une valeur numérique.";
-    return false;
-  }
-  if (document.getElementById("checkbox1").value == "") {
-    document.getElementById("checkbox1Error").innerHTML =
-      "Vous devez vérifier que vous acceptez les termes et conditions.";
-    return false;
-
-  } else document.getElementById("myForm").innerHTML = "";
-  alert("le formulaire ne peut pas être envoyé");
-  return true;
+if  (email  == 0)
+{
+  document.getElementById("emailError").innerHTML =
+  "Veuillez saisir une adresse email valide.";
+  estValide=false;
 }
+
+if (birthdate  == 0)
+{
+  document.getElementById("birthdateError").innerHTML =
+  "Veuillez saisir votre date de naissance.";
+  estValide=false;
+}
+if (quantity == 0)
+{
+  document.getElementById("quantityError").innerHTML =
+  "Veuillez choisir une valeur numérique.";
+  estValide=false;
+}  
+if (location == 0)
+{
+  document.getElementById("locationError").innerHTML =
+  "Veuillez sélectionner une ville.";
+  estValide=false;
+}
+if (checkbox1 == 0)
+{
+  document.getElementById("checkbox1Error").innerHTML =
+  "Vous devez vérifier que vous acceptez les termes et conditions."
+  estValide=false;
+}
+
+
+
 
 function disableSubmit(disabled) {
   if (disabled) {
