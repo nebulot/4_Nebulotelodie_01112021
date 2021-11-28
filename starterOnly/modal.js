@@ -13,6 +13,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const clickBtn = document.querySelectorAll(".click-btn");
 const clickEnd = document.querySelector(".click-end");
+const myForm = document.getElementById("myForm");
 
 // 'click' = "je m'inscris"
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -37,9 +38,13 @@ document
     modalbg.style.display = "none";
   });
 
-//messages d'erreur personnalisés
+// messages d'erreur personnalisés
+document.getElementById("myForm").addEventListener("submit",valider,false);
 
-function validateForm() {
+
+
+
+function validateForm() {  
   if (document.getElementById("first").value == "") {
     document.getElementById("firstError").innerHTML =
       "Veuillez saisir au minimum 2 caractères dans le champ.";
@@ -52,18 +57,24 @@ function validateForm() {
   }
   if (document.getElementById("email").value == "") {
     document.getElementById("emailError").innerHTML =
-      "Veuillez saisir au minimum 2 caractères dans le champ.";
+      "Veuillez saisir une adresse email valide.";
     return false;
   }
   if (document.getElementById("birthdate").value == "") {
     document.getElementById("birthdateError").innerHTML =
-      "Veuillez saisir au minimum 2 caractères dans le champ.";
+      "Veuillez saisir votre date de naissance.";
     return false;
   }
-  if (document.getElementById("location").value == "") {
-    document.getElementById("locationError").innerHTML =
-      "Veuillez saisir au minimum 2 caractères dans le champ.";
+  if (document.getElementById("quantity").value == "") {
+    document.getElementById("quantityError").innerHTML =
+      "Veuillez choisir une valeur numérique.";
     return false;
+  }
+  if (document.getElementById("checkbox1").value == "") {
+    document.getElementById("checkbox1Error").innerHTML =
+      "Vous devez vérifier que vous acceptez les termes et conditions.";
+    return false;
+
   } else document.getElementById("myForm").innerHTML = "";
   alert("le formulaire ne peut pas être envoyé");
   return true;
