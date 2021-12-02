@@ -1,3 +1,4 @@
+// la class responsive est rajouté à la class initiale
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -39,9 +40,7 @@ document
   });
 
 // messages d'erreur personnalisés
-document.getElementById("myForm").addEventListener("submit", valider, false);
-
-function valider() {
+function validateForm() {
   let estValide = true;
 
   let first = document.getElementById("first").value;
@@ -52,21 +51,21 @@ function valider() {
   let location = document.getElementById("location").value;
   let checkbox1 = document.getElementById("checkbox1").value;
 
-  if (first.length == 2) {
+  if (first.length >= 2) {
     document.getElementById("firstError").innerHTML =
       "Veuillez saisir au minimum 2 caractères dans le champ.";
     estValide = false;
   } else {
     document.getElementById("firstError").innerHTML = "";
   }
-  if (last.length == 2) {
+  if (last.length >= 2) {
     document.getElementById("lastError").innerHTML =
       "Veuillez saisir au minimum 2 caractères dans le champ.";
     estValide = false;
   } else {
     document.getElementById("firstError").innerHTML = "";
   }
-  if (email == 0) {
+  if (email) {
     document.getElementById("emailError").innerHTML =
       "Veuillez saisir une adresse email valide.";
     estValide = false;
@@ -74,28 +73,28 @@ function valider() {
     document.getElementById("firstError").innerHTML = "";
   }
 
-  if (birthdate == 0) {
+  if (birthdate) {
     document.getElementById("birthdateError").innerHTML =
       "Veuillez saisir votre date de naissance.";
     estValide = false;
   } else {
     document.getElementById("firstError").innerHTML = "";
   }
-  if (quantity == 0) {
+  if (quantity) {
     document.getElementById("quantityError").innerHTML =
       "Veuillez choisir une valeur numérique.";
     estValide = false;
   } else {
     document.getElementById("firstError").innerHTML = "";
   }
-  if (location == 0) {
+  if (location) {
     document.getElementById("locationError").innerHTML =
       "Veuillez sélectionner une ville.";
     estValide = false;
   } else {
     document.getElementById("firstError").innerHTML = "";
   }
-  if (checkbox1 == 0) {
+  if (checkbox1) {
     document.getElementById("checkbox1Error").innerHTML =
       "Vous devez vérifier que vous acceptez les termes et conditions.";
     estValide = false;
