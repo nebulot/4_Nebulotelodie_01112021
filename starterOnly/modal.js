@@ -63,14 +63,14 @@ function validateForm() {
       "Veuillez saisir au minimum 2 caractères dans le champ.";
     estValide = false;
   } else {
-    document.getElementById("firstError").innerHTML = "";
+    document.getElementById("lastError").innerHTML = "";
   }
   if (email) {
     document.getElementById("emailError").innerHTML =
       "Veuillez saisir une adresse email valide.";
     estValide = false;
   } else {
-    document.getElementById("firstError").innerHTML = "";
+    document.getElementById("emailError").innerHTML = "";
   }
 
   if (birthdate) {
@@ -78,28 +78,28 @@ function validateForm() {
       "Veuillez saisir votre date de naissance.";
     estValide = false;
   } else {
-    document.getElementById("firstError").innerHTML = "";
+    document.getElementById("birthdateError").innerHTML = "";
   }
   if (quantity) {
     document.getElementById("quantityError").innerHTML =
       "Veuillez choisir une valeur numérique.";
     estValide = false;
   } else {
-    document.getElementById("firstError").innerHTML = "";
+    document.getElementById("quantityError").innerHTML = "";
   }
   if (location) {
     document.getElementById("locationError").innerHTML =
       "Veuillez sélectionner une ville.";
     estValide = false;
   } else {
-    document.getElementById("firstError").innerHTML = "";
+    document.getElementById("locationError").innerHTML = "";
   }
   if (checkbox1) {
     document.getElementById("checkbox1Error").innerHTML =
       "Vous devez vérifier que vous acceptez les termes et conditions.";
     estValide = false;
   } else {
-    document.getElementById("firstError").innerHTML = "";
+    document.getElementById("checkbox1Error").innerHTML = "";
   }
 
   if (!estValide) {
@@ -108,3 +108,4 @@ function validateForm() {
     e.preventDefault();
   }
 }
+
