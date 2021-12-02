@@ -577,6 +577,25 @@ footer {
   height: auto;
 }
 
+/*La modal est à revoir*/
+.formData {
+  margin-bottom: 10px;
+}
+
+.putChoice {
+  padding-left: 4.78px;
+}
+
+#label1,
+#label2 {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  cursor: pointer;
+}
+
 /*tablette rajout*/
 @media only screen and (max-width: 1024px) {
 .main-navbar a {
@@ -591,6 +610,16 @@ footer {
 .topnav a {
   font-size: 25px;
 }
+
+#label1 {
+  -webkit-transform: translateX(-1px);
+          transform: translateX(-1px);
+}
+#label2 {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
 .hero-headline {
   font-size: 70px;
   font-weight: bolder;
@@ -687,7 +716,7 @@ footer {
 .btn-signup {
   font-size: 15px;
 }
-.text-end{
+.text-end {
   font-size: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -699,6 +728,7 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .contentEnd {
   height: 650px;
   margin-left: -28px;
