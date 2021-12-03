@@ -59,7 +59,6 @@
     <div class="bground">
       <div class="content">
         <span class="close"></span>
-
         <div class="modal-body">
           <form id="formulaire" name="reserve" method="get" onsubmit="return validateForm();">
 
@@ -77,7 +76,8 @@
 
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" required placeholder="mail@domain.com" /><br>
+              <input class="text-control" type="email" id="email" name="email" required
+                placeholder="mail@domain.com" /><br>
               <span class="error hidden" id="emailError"></span>
             </div>
 
@@ -94,7 +94,9 @@
               <span class="error hidden" id="quantityError"></span>
             </div>
 
+
             <p class="text-label">Quelles villes ?</p>
+            <span class="error hidden" id="locationError"></span>
             <div class="formData putChoice">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
@@ -121,39 +123,29 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
-            <span class="error hidden" id="locationError"></span>
-
 
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
-              </label>
-              <br>
-              <span class="error hidden" id="conditionError"></div>
+              </label><br>
+              <span class="error hidden" id="conditionError"><br>
 
-              <input class="checkbox-input" type="checkbox" id="checkbox2" />
-              <label class="checkbox2-label" for="checkbox2">
-                <span class="checkbox-icon"></span>
-                Je souhaite être prévenu des prochains évènements.
-              </label>
-              <br>
+                <input class="checkbox-input" type="checkbox" id="checkbox2" />
+                <label class="checkbox2-label" for="checkbox2">
+                  <span class="checkbox-icon"></span>
+                  Je souhaite être prévenu des prochains évènements.
+                </label>
             </div>
+            <br>
 
-            <input class="btn-submit" id="button" type="submit" value="C'est parti" />
+            <input class="button btn-submit" id="button" type="submit" value="C'est parti" />
           </form>
         </div>
-      </div>
-    </div>
 
-    <div id="bgroundEnd">
-      <div class="content contentEnd">
-        <span class="close click-end"></span>
-        <div class="modal-body modalEnd">
-          <p class="text-end">Merci !<br /> Votre réservation a bien été reçue.</p>
-          <div class="btn-submit click-end" id="btn-close">Fermer</div>
-        </div>
+        <input class="button btn-end" id="close" type="submit" value="fermer" /><br>
+
       </div>
     </div>
 

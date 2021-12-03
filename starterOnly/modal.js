@@ -20,82 +20,106 @@ spanClickEnds.forEach((spanClickEnd) =>
 
 //on reprends les formules d'erreurs initiales et ont les supprimes
 const formData = document.querySelectorAll(".formData");
-formData.forEach((form) => {
-  form.addEventListener(
-    "invalid",
-    function (e) {
-      e.preventDefault(); //retire la bulle d'erreur
-    },
-    true
-  );
-});
 
+//recupération des données du formulaire
+const first = document.getElementById("first");
+const firstErr = document.getElementById("firstError");
+const last = document.getElementById("last");
+const lastErr = document.getElementById("lastError");
+const email = document.getElementById("email");
+const emailErr = document.getElementById("emailError");
+const birth = document.getElementById("birthdate");
+const birthErr = document.getElementById("birthdateError");
+const quantity = document.getElementById("quantity");
+const quantityErr = document.getElementById("quantityError");
+const LocErr = document.getElementById("locationError");
+const Loc0 = document.getElementById("location0");
+const Loc1 = document.getElementById("location1");
+const Loc2 = document.getElementById("location2");
+const Loc3 = document.getElementById("location3");
+const Loc4 = document.getElementById("location4");
+const Loc5 = document.getElementById("location5");
+const Loc6 = document.getElementById("location6");
+const checkbox1 = document.getElementById("checkbox1");
+const conditionErr = document.getElementById("conditionError");
+const reserver = document.getElementById("button");
+const end = document.getElementById("close");
+const formulaire = document.getElementById("formulaire");
+const modalBody = document.querySelector(".modal-body");
 
+// regex email
+let mailCaractere = /[a-z0-9_\-\.]+@[a-z0-9_\-\.]+\.[a-z]+/i;
 
 // Fonctions test true / false
+formulaire.addEventListener("submit", validateForm);
 function validateForm() {
-  let estValide = true;
-
-  let first = document.getElementById("first").value;
-  let last = document.getElementById("last").value;
-  let email = document.getElementById("email").value;
-  let birthdate = document.getElementById("birthdate").value;
-  let quantity = document.getElementById("quantity").value;
-  let location = document.getElementById("location").value;
-  let checkbox1 = document.getElementById("checkbox1").value;
-
-  if ((first.length, last.length >= 2)) {
-    document.getElementById("firstError", "lastError").innerHTML =
-      "Veuillez saisir au minimum 2 caractères dans le champ.";
-        estValide = false;
+  if (first.value === "" || first.value.length >= 2) {
+    //vide ou sup 2
+    firstErr.textContent = "Veuillez saisir au moins 2 caractères.";
+    firstErr.style.fontSize = "12px";
+    firstErr.style.color = "red";
   } else {
-    document.getElementById("firstError", "lastError").innerHTML = "";
-    }
- 
-
-  if ((email(value) == falseemail)) {
-    document.getElementById("emailError").innerHTML =
-      "Veuillez saisir une adresse email valide.";
-    estValide = false;
-  } else {
-    document.getElementById("emailError").innerHTML = "";
+    firstErr.textContent = "";
+    // Pas de message d'erreur, nombre de caractères suffisant
   }
 
-  if ((birthdate.length <= 2 || dateBirthdate > today)) {
-    document.getElementById("birthdateError").innerHTML =
-      "Veuillez saisir votre date de naissance.";
-    estValide = false;
+  if (last.value === "" || last.value.length >= 2) {
+    lastErr.textContent = "Veuillez saisir au moins 2 caractères.";
+    lastErr.style.fontSize = "12px";
+    lastErr.style.color = "red";
   } else {
-    document.getElementById("birthdateError").innerHTML = "";
+    lastErr.textContent = "";
   }
 
-  if (quantity) {
-    document.getElementById("quantityError").innerHTML =
-      "Veuillez choisir une valeur numérique.";
-    estValide = false;
+  if (mailCaractere.test(email.value)) {
+    //voir regex
+    emailErr.textContent = "";
   } else {
-    document.getElementById("quantityError").innerHTML = "";
-  }
-  if (location) {
-    document.getElementById("locationError").innerHTML =
-      "Veuillez sélectionner une ville.";
-    estValide = false;
-  } else {
-    document.getElementById("locationError").innerHTML = "";
-  }
-  if (checkbox1) {
-    document.getElementById("checkbox1Error").innerHTML =
-      "Vous devez vérifier que vous acceptez les termes et conditions.";
-    estValide = false;
-  } else {
-    document.getElementById("checkbox1Error").innerHTML = "";
+    emailErr.textContent = "Veuillez saisir une adresse email valide.";
+    emailErr.style.fontSize = "12px";
+    emailErr.style.color = "red";
   }
 
-  if (!estValide) {
-    // le ! indique l'inverse si ce n'est pas valide
-    //on bloque le formulaire
-    e.preventDefault();
+  if (birth.value === "") {
+    // champ vide
+    birthErr.textContent = "Veuillez renseigner votre date de naissance.";
+    birthErr.style.fontSize = "12px";
+    birthErr.style.color = "red";
+  } else {
+    birthErr.textContent = " ";
   }
+
+  if (quantityErr.value === "") {
+    quantityErr.textContent = "Veuillez renseigner une valeur numérique.";
+    quantityErr.style.fontSize = "12px";
+    quantityErr.style.color = "red";
+  } else {
+    quantityErr.textContent = "";
+  }
+
+  if (
+    Loc1.checked ||
+    Loc2.checked ||
+    Loc3.checked ||
+    Loc4.checked ||
+    Loc5.checked ||
+    Loc6.checked
+  ) {
+    LocErr.textContent = "";
+  } else {
+    LocErr.textContent = "Veuillez choisir une ville.";
+    LocErr.style.fontSize = "12px";
+    LocErr.style.color = "red";
+  }
+
+  if (checkbox1.checked) {
+    conditionErr.textContent = "";
+  } else {
+    conditionErr.textContent = " Veuillez acceptez les termes et conditions.";
+    conditionErr.style.fontSize = "12px";
+    conditionErr.style.color = "red";
+  }
+  e.preventDefault();
 }
 
 //fermer le formulaire de saisie et recuperer les informations
@@ -108,14 +132,40 @@ function launchModal() {
 
 // afficher et fermer la modal de fin :
 function launchModalEnd() {
-  const modalbgEnd = document.querySelector("#bgroundEnd");
+  const modalbgEnd = document.querySelector("#close");
   modalbgEnd.style.display = "flex";
 }
 
 function closeModalEnd() {
-  const modalbgEnd = document.querySelector("#bgroundEnd");
+  const modalbgEnd = document.querySelector("#close");
   modalbgEnd.style.display = "none";
 }
+
+// valider le champs des saisies avec confirmation de saisie
+reserver.addEventListener("click", function () {
+  if (
+    first.value &&
+    last.value &&
+    birthdate.value &&
+    email.value &&
+    quantity.value &&
+    (Loc1.checked ||
+      Loc2.checked ||
+      Loc3.checked ||
+      Loc4.checked ||
+      Loc5.checked ||
+      Loc6.checked) &&
+    checkbox1.checked === true
+  ) {
+    modalBody.innerHTML = " Merci ! Votre réservation a bien été enregistrée.";
+    modalBody.style.height = "600px";
+    modalBody.style.paddingTop = "250px";
+    modalBody.style.paddingLeft = "100px";
+    modalBody.style.paddingRight = "100px";
+    end.style.display = "block";
+    end.addEventListener("click", closeModal);
+  }
+});
 
 //                           RESPONSIVE                //
 // la class responsive est rajouté à la class initiale
