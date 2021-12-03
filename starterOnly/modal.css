@@ -228,14 +228,26 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/*
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
 
 /*displayrajout cadre rouge et cadre vert*/
+
+input, textarea {
+  transition-duration (0,5s);
+}
+input:focus:invalid, textarea:invalid {
+  border:red solid 2px;
+}
+input:focus:invalid, textarea:invalid {
+  display:block;
+  color: #e54858;
+}
+
+input:focus:valid, textarea:valid {
+  border:green solid 2px;
+}
+input.button:focus:valid {
+  border:none;
+}
 
 .checkbox-label,
 .checkbox2-label {

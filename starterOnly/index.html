@@ -61,37 +61,37 @@
         <span class="close"></span>
 
         <div class="modal-body">
-          <form name="reserve" method="get" onsubmit="return validateForm();" id="formule">
+          <form id="formulaire" name="reserve" method="get" onsubmit="return validateForm();">
 
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" minlength="2" required /><br>
-              <div class="error" id="firstError hidden"></div>
+              <span class="error hidden" id="firstError"></span>
             </div>
 
             <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" minlength="2" required /><br>
-              <div class="error" id="lastError hidden"></div>
+              <span class="error hidden" id="lastError"></span>
             </div>
 
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" required /><br>
-              <div class="error" id="emailError hidden"></div>
+              <input class="text-control" type="email" id="email" name="email" required placeholder="mail@domain.com" /><br>
+              <span class="error hidden" id="emailError"></span>
             </div>
 
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" required />
-              <div class="error" id="birthdateError hidden"></div>
+              <span class="error hidden" id="birthdateError"></span>
             </div>
 
 
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99 required">
-              <div class="error" id="quantityError hidden"></div>
+              <span class="error hidden" id="quantityError"></span>
             </div>
 
             <p class="text-label">Quelles villes ?</p>
@@ -121,7 +121,7 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
-            <div class="error" id="locationError hidden"></div>
+            <span class="error hidden" id="locationError"></span>
 
 
             <div class="formData">
@@ -131,7 +131,7 @@
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
               <br>
-              <div class="error" id="conditionError"></div>
+              <span class="error hidden" id="conditionError"></div>
 
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">
@@ -139,10 +139,9 @@
                 Je souhaite être prévenu des prochains évènements.
               </label>
               <br>
-
             </div>
 
-            <input class="btn-submit button" type="submit" value="C'est parti" />
+            <input class="btn-submit" id="button" type="submit" value="C'est parti" />
           </form>
         </div>
       </div>

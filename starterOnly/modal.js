@@ -15,27 +15,24 @@ spanCloses.forEach((spanClose) =>
 // constante span+click-end pour la modal de fin
 const spanClickEnds = document.querySelectorAll(".click-end");
 spanClickEnds.forEach((spanClickEnd) =>
-  spanClickEnd.addEventListener("click, closeModalEnd")
+  spanClickEnd.addEventListener("click", closeModalEnd)
 );
 
+//on reprends les formules d'erreurs initiales et ont les supprimes
 const formData = document.querySelectorAll(".formData");
-const clickBtn = document.querySelectorAll(".click-btn");
-const clickEnd = document.querySelector(".click-end");
+formData.forEach((form) => {
+  form.addEventListener(
+    "invalid",
+    function (e) {
+      e.preventDefault(); //retire la bulle d'erreur
+    },
+    true
+  );
+});
 
-// lancement du formulaire voir diplay form
-function launchModal() {
-  modalbg.style.display = "block";
-}
 
-// fermer via fermer
-document
-  .querySelector(".click-end")
-  .addEventListener("click", function (_close) {
-    clickEnd.style.display = "none";
-    modalbg.style.display = "none";
-  });
 
-// messages d'erreur personnalisés
+// Fonctions test true / false
 function validateForm() {
   let estValide = true;
 
@@ -47,23 +44,16 @@ function validateForm() {
   let location = document.getElementById("location").value;
   let checkbox1 = document.getElementById("checkbox1").value;
 
-  if (first.length >= 2) {
-    document.getElementById("firstError").innerHTML =
-      "Veuillez saisir au minimum 2 caractères dans le champ." +
-      colorError +
-      "2px solid";
-    estValide = false;
-  } else {
-    document.getElementById("firstError").innerHTML = "";
-  }
-  if (last.length >= 2) {
-    document.getElementById("lastError").innerHTML =
+  if ((first.length, last.length >= 2)) {
+    document.getElementById("firstError", "lastError").innerHTML =
       "Veuillez saisir au minimum 2 caractères dans le champ.";
-    estValide = false;
+        estValide = false;
   } else {
-    document.getElementById("lastError").innerHTML = "";
-  }
-  if (email) {
+    document.getElementById("firstError", "lastError").innerHTML = "";
+    }
+ 
+
+  if ((email(value) == falseemail)) {
     document.getElementById("emailError").innerHTML =
       "Veuillez saisir une adresse email valide.";
     estValide = false;
@@ -71,13 +61,14 @@ function validateForm() {
     document.getElementById("emailError").innerHTML = "";
   }
 
-  if (birthdate) {
+  if ((birthdate.length <= 2 || dateBirthdate > today)) {
     document.getElementById("birthdateError").innerHTML =
       "Veuillez saisir votre date de naissance.";
     estValide = false;
   } else {
     document.getElementById("birthdateError").innerHTML = "";
   }
+
   if (quantity) {
     document.getElementById("quantityError").innerHTML =
       "Veuillez choisir une valeur numérique.";
