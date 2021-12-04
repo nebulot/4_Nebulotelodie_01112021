@@ -60,7 +60,7 @@
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form id="formulaire" name="reserve" method="get" onsubmit="return validateForm();">
+          <form id="formulaire" name="reserve">
 
             <div class="formData">
               <label for="first">Prénom</label><br>
@@ -90,8 +90,8 @@
 
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99 required">
-              <div id="quantityError"></span>
+              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
+              <span id="quantityError"></span>
             </div>
 
 
@@ -125,22 +125,23 @@
             </div>
 
             <div class="formData2">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required/>
+              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label><br>
-              <span id="conditionError"><br>
+              <span id="conditionError"></span><br>
 
-                <input class="checkbox-input" type="checkbox" id="checkbox2" />
-                <label class="checkbox2-label" for="checkbox2">
-                  <span class="checkbox-icon"></span>
-                  Je souhaite être prévenu des prochains évènements.
-                </label>
+              <input class="checkbox-input" type="checkbox" id="checkbox2" />
+              <label class="checkbox2-label" for="checkbox2">
+                <span class="checkbox-icon"></span>
+                Je souhaite être prévenu des prochains évènements.
+              </label>
             </div>
             <br>
 
-            <input class="button btn-submit" id="validation" type="submit" value="C'est parti" />
+
+            <input class="button btn-submit" id="validation" type="submit" value="C'est parti" /><br>
           </form>
         </div>
 

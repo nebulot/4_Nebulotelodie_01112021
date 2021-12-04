@@ -61,8 +61,8 @@ const modalBody = document.querySelector(".modal-body");
 let mailCaractere = /[a-z0-9_\-\.]+@[a-z0-9_\-\.]+\.[a-z]+/i;
 
 // Fonctions test true / false
-formulaire.addEventListener("submit", validateForm);
-function validateForm() {
+document.addEventListener('submit', validate);
+function validate(e) {
   if (first.value === "" || first.value.length >= 2) {
     //vide ou sup 2
     firstErr.innerHTML = "Veuillez saisir au moins 2 caractères.";
@@ -152,7 +152,7 @@ function closeModalEnd() {
 }
 
 // valider le champs des saisies avec confirmation de saisie
-reserver.addEventListener("click", function () {
+formulaire.addEventListener("click", function () {
   if (
     first.value &&
     last.value &&

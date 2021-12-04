@@ -237,7 +237,7 @@ input {
 /*displayrajout cadre rouge et cadre vert*/
 
 input {
-  transition-duration (0,5s);
+  transition-duration:(0,5s);
 }
 input:focus:invalid{
   border:red solid 2px;
@@ -346,7 +346,7 @@ input#validation, input#end {
 
 //rajout de la modal fin btn_end
 .btn-submit,
-.btn-signup
+.btn-signup,
 .btn-end {
   background: #fe142f;
   display: block;
