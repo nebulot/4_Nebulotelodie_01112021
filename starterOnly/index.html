@@ -65,38 +65,38 @@
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" minlength="2" required /><br>
-              <span class="error hidden" id="firstError"></span>
+              <span id="firstError"></span>
             </div>
 
             <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" minlength="2" required /><br>
-              <span class="error hidden" id="lastError"></span>
+              <span id="lastError"></span>
             </div>
 
             <div class="formData">
               <label for="email">E-mail</label><br>
               <input class="text-control" type="email" id="email" name="email" required
                 placeholder="mail@domain.com" /><br>
-              <span class="error hidden" id="emailError"></span>
+              <span id="emailError"></span>
             </div>
 
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" required />
-              <span class="error hidden" id="birthdateError"></span>
+              <span id="birthdateError"></span>
             </div>
 
 
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99 required">
-              <span class="error hidden" id="quantityError"></span>
+              <div id="quantityError"></span>
             </div>
 
 
             <p class="text-label">Quelles villes ?</p>
-            <span class="error hidden" id="locationError"></span>
+            <span id="locationError"></span>
             <div class="formData putChoice">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
@@ -124,13 +124,13 @@
                 Portland</label>
             </div>
 
-            <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
+            <div class="formData2">
+              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required/>
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label><br>
-              <span class="error hidden" id="conditionError"><br>
+              <span id="conditionError"><br>
 
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
@@ -140,11 +140,11 @@
             </div>
             <br>
 
-            <input class="button btn-submit" id="button" type="submit" value="C'est parti" />
+            <input class="button btn-submit" id="validation" type="submit" value="C'est parti" />
           </form>
         </div>
 
-        <input class="button btn-end" id="close" type="submit" value="fermer" /><br>
+        <input class="button btn-end" id="end" type="submit" value="fermer" /><br>
 
       </div>
     </div>

@@ -1,3 +1,13 @@
+//                           RESPONSIVE                //
+// la class responsive est rajouté à la class initiale
+function editNav() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += "responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 // DOM Elements
 //(page du formulaire)
 const modalbg = document.querySelector(".bground");
@@ -42,8 +52,8 @@ const Loc5 = document.getElementById("location5");
 const Loc6 = document.getElementById("location6");
 const checkbox1 = document.getElementById("checkbox1");
 const conditionErr = document.getElementById("conditionError");
-const reserver = document.getElementById("button");
-const end = document.getElementById("close");
+const reserver = document.getElementById("confirmation");
+const end = document.getElementById("end");
 const formulaire = document.getElementById("formulaire");
 const modalBody = document.querySelector(".modal-body");
 
@@ -55,46 +65,46 @@ formulaire.addEventListener("submit", validateForm);
 function validateForm() {
   if (first.value === "" || first.value.length >= 2) {
     //vide ou sup 2
-    firstErr.textContent = "Veuillez saisir au moins 2 caractères.";
+    firstErr.innerHTML = "Veuillez saisir au moins 2 caractères.";
     firstErr.style.fontSize = "12px";
     firstErr.style.color = "red";
   } else {
-    firstErr.textContent = "";
+    firstErr.innerHTML = "";
     // Pas de message d'erreur, nombre de caractères suffisant
   }
 
   if (last.value === "" || last.value.length >= 2) {
-    lastErr.textContent = "Veuillez saisir au moins 2 caractères.";
+    lastErr.innerHTML = "Veuillez saisir au moins 2 caractères.";
     lastErr.style.fontSize = "12px";
     lastErr.style.color = "red";
   } else {
-    lastErr.textContent = "";
+    lastErr.innerHTML = "";
   }
 
   if (mailCaractere.test(email.value)) {
     //voir regex
-    emailErr.textContent = "";
+    emailErr.innerHTML = "";
   } else {
-    emailErr.textContent = "Veuillez saisir une adresse email valide.";
+    emailErr.innerHTML = "Veuillez saisir une adresse email valide.";
     emailErr.style.fontSize = "12px";
     emailErr.style.color = "red";
   }
 
   if (birth.value === "") {
     // champ vide
-    birthErr.textContent = "Veuillez renseigner votre date de naissance.";
+    birthErr.innerHTML = "Veuillez renseigner votre date de naissance.";
     birthErr.style.fontSize = "12px";
     birthErr.style.color = "red";
   } else {
-    birthErr.textContent = " ";
+    birthErr.innerHTML = " ";
   }
 
   if (quantityErr.value === "") {
-    quantityErr.textContent = "Veuillez renseigner une valeur numérique.";
+    quantityErr.innerHTML = "Veuillez renseigner une valeur numérique.";
     quantityErr.style.fontSize = "12px";
     quantityErr.style.color = "red";
   } else {
-    quantityErr.textContent = "";
+    quantityErr.innerHTML = "";
   }
 
   if (
@@ -105,17 +115,17 @@ function validateForm() {
     Loc5.checked ||
     Loc6.checked
   ) {
-    LocErr.textContent = "";
+    LocErr.innerHTML = "";
   } else {
-    LocErr.textContent = "Veuillez choisir une ville.";
+    LocErr.innerHTML = "Veuillez choisir une ville.";
     LocErr.style.fontSize = "12px";
     LocErr.style.color = "red";
   }
 
   if (checkbox1.checked) {
-    conditionErr.textContent = "";
+    conditionErr.innerHTML = "";
   } else {
-    conditionErr.textContent = " Veuillez acceptez les termes et conditions.";
+    conditionErr.innerHTML = " Veuillez acceptez les termes et conditions.";
     conditionErr.style.fontSize = "12px";
     conditionErr.style.color = "red";
   }
@@ -132,12 +142,12 @@ function launchModal() {
 
 // afficher et fermer la modal de fin :
 function launchModalEnd() {
-  const modalbgEnd = document.querySelector("#close");
+  const modalbgEnd = document.querySelector("#end");
   modalbgEnd.style.display = "flex";
 }
 
 function closeModalEnd() {
-  const modalbgEnd = document.querySelector("#close");
+  const modalbgEnd = document.querySelector("#end");
   modalbgEnd.style.display = "none";
 }
 
@@ -146,7 +156,7 @@ reserver.addEventListener("click", function () {
   if (
     first.value &&
     last.value &&
-    birthdate.value &&
+    birth.value &&
     email.value &&
     quantity.value &&
     (Loc1.checked ||
@@ -165,26 +175,6 @@ reserver.addEventListener("click", function () {
     end.style.display = "block";
     end.addEventListener("click", closeModal);
   }
-});
+})
 
-//                           RESPONSIVE                //
-// la class responsive est rajouté à la class initiale
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += "responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
 
-//fait disparaitre les erreurs pré enregistrer
-function supprimeError(errorId) {
-  const elementError = document.querySelector(errorId);
-  elementError.style.visibility = "hidden";
-}
-
-function afficheError(errorId) {
-  const elementError = document.querySelector(errorId);
-  elementError.style.visibility = "visible";
-}
