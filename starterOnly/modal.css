@@ -17,7 +17,7 @@ body {
   flex-direction: column;
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1300px;
+  max-width: 95%;
   margin: 0 auto;
 }
 
@@ -52,6 +52,8 @@ img {
   font-family: Roboto, sans-serif;
 }
 
+//modification éviter les changements sur ts les spans
+
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
@@ -67,6 +69,15 @@ img {
 
 .topnav .icon {
   display: none;
+}
+
+// le menu représenté par 3 barre change de couleur
+.fa{
+  color : #FF001B;
+}
+
+.fa:hover{
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -184,7 +195,8 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
-}
+  box-shadow: 0px 10px 10px black;
+  }
 
 .modal-body {
   padding: 15px 8%;
@@ -250,9 +262,22 @@ input:focus:invalid{
 input:focus:valid {
   border:green solid 2px;
 }
-input#validation, input#end {
+input#end {
   border:red;
 }
+
+input[type=submit]#validation
+{
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border:red;
+}
+ 
+input[type=submit]#validation + br
+{
+    display: none;}
 
 .checkbox-label,
 .checkbox2-label {
@@ -362,6 +387,7 @@ input#validation, input#end {
 .btn-end {
   display:none;
 }
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -555,3 +581,6 @@ footer {
     opacity: 1;
   }
 }
+
+// correction 
+

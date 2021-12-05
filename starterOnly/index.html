@@ -60,44 +60,44 @@
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form id="formulaire" name="reserve">
+          <form id="formulaire" name="reserve" action="index.html" method="get" onsubmit="return validate();"
+            novalidate>
 
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" minlength="2" required /><br>
-              <span id="firstError"></span>
+              <div id="firstError" class="error"></div>
             </div>
 
             <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" minlength="2" required /><br>
-              <span id="lastError"></span>
+              <div id="lastError" class="error"></div>
             </div>
 
             <div class="formData">
               <label for="email">E-mail</label><br>
               <input class="text-control" type="email" id="email" name="email" required
                 placeholder="mail@domain.com" /><br>
-              <span id="emailError"></span>
+              <div id="emailError" class="error"></div>
             </div>
 
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" required />
-              <span id="birthdateError"></span>
+              <div id="birthdateError" class="error"></div>
             </div>
 
 
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
-              <span id="quantityError"></span>
+              <div id="quantityError" class="error"></div>
             </div>
 
 
             <p class="text-label">Quelles villes ?</p>
-            <span id="locationError"></span>
-            <div class="formData putChoice">
+            <div class="formData">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
@@ -123,28 +123,26 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
+            <div id="locationError" class="error"></div>
 
-            <div class="formData2">
+            <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label><br>
-              <span id="conditionError"></span><br>
+              <div id="conditionError" class="error"></div><br>
 
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">
                 <span class="checkbox-icon"></span>
                 Je souhaite être prévenu des prochains évènements.
               </label>
+              <br>
             </div>
-            <br>
-
-
             <input class="button btn-submit" id="validation" type="submit" value="C'est parti" /><br>
           </form>
         </div>
-
         <input class="button btn-end" id="end" type="submit" value="fermer" /><br>
 
       </div>
