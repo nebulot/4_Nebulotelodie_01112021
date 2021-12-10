@@ -266,7 +266,7 @@ input#end {
   border:red;
 }
 
-input[type=submit]#validation
+input[type=submit]#submit
 {
     display: block;
     position: relative;
@@ -275,7 +275,7 @@ input[type=submit]#validation
     border:red;
 }
  
-input[type=submit]#validation + br
+input[type=submit]#submit + br
 {
     display: none;}
 

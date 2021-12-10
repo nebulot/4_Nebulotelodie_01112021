@@ -42,9 +42,8 @@ const locError = document.getElementById("locationError");
 const conditions = document.getElementById("checkbox1");
 const conditionError = document.getElementById("conditionError");
 const modalBody = document.querySelector(".modal-body");
-const parti = document.getElementById("validation");
+const parti = document.getElementById("submit");
 
-      
 //fermer le formulaire de saisie et recuperer les informations
 closeBtn.addEventListener("click", closeModal);
 function closeModal() {
@@ -55,53 +54,55 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-closeEnd.style.display = "none";  
+closeEnd.style.display = "none";
 let formOk = false;
 
 // Fonctions test true / false
 form.addEventListener("submit", checkInputs);
-function checkInputs(){
-    
-  if (first.value === "" || first.value.length >= 2) {
+first.addEventListener("change", checkInputs);
+function checkInputs() {
+  if (first.value = "" || first.value.length <= 2) {
     //vide ou sup 2
     firstError.innerHTML = "Veuillez saisir au moins 2 caractères.";
     firstError.style.fontSize = "12px";
     firstError.style.color = "red";
     first.style.borderWidth = "2px";
     first.style.borderColor = "red";
-    return formOk === false;
+    console.log("erreur dans first");
+    return formOk = false;
+
   } else {
     firstError.innerHTML = "";
     first.style = "default";
-    
+
     // Pas de message d'erreur, nombre de caractères suffisant
   }
 
-  if (last.value === "" || last.value.length >= 2) {
+  if (last.value === "" || last.value.length <= 2) {
     lastError.innerHTML = "Veuillez saisir au moins 2 caractères.";
     lastError.style.fontSize = "12px";
     lastError.style.color = "red";
-    first.style.borderWidth = "2px";
-    first.style.borderColor = "red";
-    return formOk === false;
+    last.style.borderWidth = "2px";
+    last.style.borderColor = "red";
+
+    return formOk = false;
   } else {
     lastError.innerHTML = "";
     last.style = "default";
-    
   }
-//regex email
-  let mailCaractere = /[a-z0-9_\-\.]+@[a-z0-9_\-\.]+\.[a-z]+/i;
-  if (mailCaractere.test(email.value)) {
+  //regex email
+  let mailCaractere = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if(mailCaractere.test(email.value)){
     emailError.innerHTML = "Veuillez saisir une adresse email valide.";
     emailError.style.fontSize = "12px";
     emailError.style.color = "red";
     first.style.borderWidth = "2px";
     first.style.borderColor = "red";
-    return formOk === false;
-  } else {
+    return formOk = false;
+  }
+   else {
     emailError.innerHTML = "";
     email.style = "default";
-      
   }
 
   if (birth.value === "") {
@@ -115,64 +116,73 @@ function checkInputs(){
   } else {
     birthError.innerHTML = " ";
     birth.style = "default";
-  
   }
 
-  if (quantityError.value === "" || isNaN(quantity.value)) {
+  if (quantityError.value = "" || isNaN(quantity.value)) {
     quantityError.innerHTML = "Veuillez renseigner une valeur numérique.";
     quantityError.style.fontSize = "12px";
     quantityError.style.color = "red";
     first.style.borderWidth = "2px";
     first.style.borderColor = "red";
-    return formOk === false;
+    return formOk = false;
   } else {
     quantityError.innerHTML = "";
     quantity.style = "default";
-    
   }
 
   // attention pour les deux conditions qui suivent "ne pas" = !
 
-  if(!(loc[0].checked || loc[1].checked || loc[2].checked || loc[3].checked || loc[4].checked || loc[5].checked)) {
+  if (
+    !(
+      loc[0].checked ||
+      loc[1].checked ||
+      loc[2].checked ||
+      loc[3].checked ||
+      loc[4].checked ||
+      loc[5].checked
+    )
+  ) {
     locError.innerHTML = "Veuillez choisir une ville.";
     locError.style.color = "red";
     locError.style.fontSize = "10px";
-    return formOk === false;
+    return formOk = false;
   } else {
     locError.innerHTML = "";
-    
- }
+    loc.style = "default";
+  }
 
-  if(!conditions.checked) { 
-    conditionError.innerHTML = "Veuillez vérifier que vous avez accepté les termes et conditions";
+  if (!conditions.checked) {
+    conditionError.innerHTML =
+      "Veuillez vérifier que vous avez accepté les termes et conditions";
     conditionError.style.color = "red";
     conditionError.style.fontSize = "10px";
     conditions.style.borderColor = "red";
     conditions.style.borderWidth = "2px";
-    return formOk === false;
+    return formOk = false;
   } else {
     conditionError.innerHTML = "";
-      }
-  return formOk = true;
+    conditions.style = "default";
+  }
+  return (formOk = true);
 }
 
 //valiser le champs des saisies avec confirmation de saisie
-function validation(e){
-  e.preventDefault();
-     checkInputs();
-     
-    if(formOk === true) {
-    form.style.display = "none"; 
+function validate() {
+  let form = document.getElementById("formulaire");
+  /*form.preventDefault();*/
+
+  if (formOk = true) {
     modalBody.innerHTML = " Merci ! Votre réservation a bien été enregistrée.";
     modalBody.style.height = "600px";
     modalBody.style.paddingTop = "250px";
     modalBody.style.paddingLeft = "100px";
     modalBody.style.paddingRight = "100px";
-    
+
     closeEnd.style.display = "block";
     submitBtn.style.display = "none";
     closeEnd.addEventListener("click", closeModal);
     return true;
-    }
   }
-form.addEventListener("submit", validation);
+  return false;
+}
+form.addEventListener("submit", validate);
