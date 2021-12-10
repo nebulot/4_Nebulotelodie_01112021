@@ -44,6 +44,14 @@ const conditionError = document.getElementById("conditionError");
 const modalBody = document.querySelector(".modal-body");
 const parti = document.getElementById("submit");
 
+//constante des location 1 à 6 à valider dans le formulaire
+const loc1 = document.getElementById ("location1");
+const loc2 = document.getElementById ("location2");
+const loc3 = document.getElementById ("location3");
+const loc4 = document.getElementById ("location4");
+const loc5 = document.getElementById ("location5");
+const loc6 = document.getElementById ("location6");
+
 //fermer le formulaire de saisie et recuperer les informations
 closeBtn.addEventListener("click", closeModal);
 function closeModal() {
@@ -55,20 +63,20 @@ function launchModal() {
 }
 
 closeEnd.style.display = "none";
+
 let formOk = false;
 
 // Fonctions test true / false
 form.addEventListener("submit", checkInputs);
 first.addEventListener("change", checkInputs);
 function checkInputs() {
-  if (first.value = "" || first.value.length <= 2) {
+  if (first.value === "" || first.value.length <= 2) {
     //vide ou sup 2
     firstError.innerHTML = "Veuillez saisir au moins 2 caractères.";
     firstError.style.fontSize = "12px";
     firstError.style.color = "red";
     first.style.borderWidth = "2px";
     first.style.borderColor = "red";
-    console.log("erreur dans first");
     return formOk = false;
 
   } else {
@@ -84,20 +92,20 @@ function checkInputs() {
     lastError.style.color = "red";
     last.style.borderWidth = "2px";
     last.style.borderColor = "red";
+    return  formOk = false;
 
-    return formOk = false;
   } else {
     lastError.innerHTML = "";
     last.style = "default";
   }
   //regex email
   let mailCaractere = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if(mailCaractere.test(email.value)){
+  if(!mailCaractere.test(email.value)){
     emailError.innerHTML = "Veuillez saisir une adresse email valide.";
     emailError.style.fontSize = "12px";
     emailError.style.color = "red";
-    first.style.borderWidth = "2px";
-    first.style.borderColor = "red";
+    email.style.borderWidth = "2px";
+    email.style.borderColor = "red";
     return formOk = false;
   }
    else {
@@ -110,9 +118,9 @@ function checkInputs() {
     birthError.innerHTML = "Veuillez renseigner votre date de naissance.";
     birthError.style.fontSize = "12px";
     birthError.style.color = "red";
-    first.style.borderWidth = "2px";
-    first.style.borderColor = "red";
-    return formOk === false;
+    birth.style.borderWidth = "2px";
+    birth.style.borderColor = "red";
+    return formOk = false;
   } else {
     birthError.innerHTML = " ";
     birth.style = "default";
@@ -122,8 +130,8 @@ function checkInputs() {
     quantityError.innerHTML = "Veuillez renseigner une valeur numérique.";
     quantityError.style.fontSize = "12px";
     quantityError.style.color = "red";
-    first.style.borderWidth = "2px";
-    first.style.borderColor = "red";
+    quantity.style.borderWidth = "2px";
+    quantity.style.borderColor = "red";
     return formOk = false;
   } else {
     quantityError.innerHTML = "";
@@ -132,16 +140,7 @@ function checkInputs() {
 
   // attention pour les deux conditions qui suivent "ne pas" = !
 
-  if (
-    !(
-      loc[0].checked ||
-      loc[1].checked ||
-      loc[2].checked ||
-      loc[3].checked ||
-      loc[4].checked ||
-      loc[5].checked
-    )
-  ) {
+  if((loc.checked)||(loc1.checked)||(loc2.checked)||(loc3.checked)||(loc4.checked)||(loc5.checked)||(loc6.checked)){
     locError.innerHTML = "Veuillez choisir une ville.";
     locError.style.color = "red";
     locError.style.fontSize = "10px";
@@ -150,7 +149,7 @@ function checkInputs() {
     locError.innerHTML = "";
     loc.style = "default";
   }
-
+  
   if (!conditions.checked) {
     conditionError.innerHTML =
       "Veuillez vérifier que vous avez accepté les termes et conditions";
@@ -168,12 +167,14 @@ function checkInputs() {
 
 //valiser le champs des saisies avec confirmation de saisie
 function validate() {
-  let form = document.getElementById("formulaire");
+    let form = document.getElementById("formulaire");
   /*form.preventDefault();*/
 
-  if (formOk = true) {
+  if (formOk === true) {
     modalBody.innerHTML = " Merci ! Votre réservation a bien été enregistrée.";
     modalBody.style.height = "600px";
+    modalBody.style.fontSize = "30px";
+    modalBody.style.textAlign = "center";
     modalBody.style.paddingTop = "250px";
     modalBody.style.paddingLeft = "100px";
     modalBody.style.paddingRight = "100px";

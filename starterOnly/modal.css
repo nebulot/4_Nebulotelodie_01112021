@@ -58,18 +58,22 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-  text-decoration: underline; /* souligner les titres */
+   /* souligner les titres */
 }
 
-.topnav a.active {
+.topnav a.active:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  text-decoration: underline;
 }
 
 .topnav .icon {
   display: none;
 }
+
+// effacer acceuil qui n'apparait pas dans notre dossier base //
+
 
 // le menu représenté par 3 barre change de couleur
 .fa{
@@ -87,6 +91,8 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+    margin-top: 6px;
+    color:red;
   }
 }
 
@@ -113,7 +119,9 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+//icone menu au centre et en rouge sur mobile//
+    margin-top: 6px;
+    color:red;
   }
 }
 
@@ -151,12 +159,16 @@ main {
   font-family: var(--font-slab);
 }
 
+// titre réduit sur la maquette //
+.hero-headline {
+  font-size: 2.7rem;}
+
 /* Modal form */
 
 .button {
   background: #fe142f;
   margin-top: 0.5em;
-  padding: 1em;
+  padding: 1em 2em 1em 2em;
   color: #fff;
   border-radius: 15px;
   cursor: pointer;
@@ -184,7 +196,7 @@ main {
 }
 
 .content {
-  margin: 5% auto;
+  margin: 20% auto;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -249,7 +261,7 @@ input {
 /*displayrajout cadre rouge et cadre vert*/
 
 input {
-  transition-duration:(0,5s);
+  transition-duration:(0,2s);
 }
 input:focus:invalid{
   border:red solid 2px;
@@ -266,7 +278,7 @@ input#end {
   border:red;
 }
 
-input[type=submit]#submit
+input[type=submit]#submit, input[type=submit]#end
 {
     display: block;
     position: relative;
@@ -388,6 +400,10 @@ input[type=submit]#submit + br
   display:none;
 }
 
+.btn-signup {
+  border:red;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -499,7 +515,7 @@ input[type=submit]#submit + br
   width: 146%;
   font-weight: normal;
   margin-top: 57px;
-  padding: 0;
+  
 }
 .btn-signup {
   outline: none;
@@ -541,7 +557,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 8px;
   }
   .hero-content::after {
     content: unset;
@@ -550,12 +566,13 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3rem;
     white-space: normal;
+    font-weight: bolder ;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .hero-img img {
     border-radius: 10px;
