@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* Landing Page */
 
 body {
@@ -52,16 +53,18 @@ img {
   font-family: Roboto, sans-serif;
 }
 
-//modification éviter les changements sur ts les spans
+/*modification éviter les changements sur ts les spans*/
 
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-   /* souligner les titres */
+  text-decoration: underline;
 }
 
-.topnav a.active:hover {
+/*surligner les titres au passage de la souris*/
+
+.topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
@@ -72,19 +75,18 @@ img {
   display: none;
 }
 
-// effacer acceuil qui n'apparait pas dans notre dossier base //
+/* effacer acceuil qui n'apparait pas dans notre dossier base */
+/* le menu représenté par 3 barre change de couleur*/
 
-
-// le menu représenté par 3 barre change de couleur
-.fa{
-  color : #FF001B;
+.fa {
+  color: #ff001b;
 }
 
-.fa:hover{
+.fa:hover {
   color: white;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1150px) {
   .topnav a {
     display: none;
   }
@@ -92,11 +94,11 @@ img {
     float: right;
     display: block;
     margin-top: 6px;
-    color:red;
+    color: red;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1150px) {
   .topnav.responsive {
     position: relative;
   }
@@ -112,6 +114,8 @@ img {
   }
 }
 
+/*icone menu au centre et en rouge sur mobile*/
+
 @media screen and (max-width: 540px) {
   .topnav a {
     display: none;
@@ -119,9 +123,8 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-//icone menu au centre et en rouge sur mobile//
     margin-top: 6px;
-    color:red;
+    color: red;
   }
 }
 
@@ -159,9 +162,10 @@ main {
   font-family: var(--font-slab);
 }
 
-// titre réduit sur la maquette //
+/* titre réduit sur la maquette */
 .hero-headline {
-  font-size: 2.7rem;}
+  font-size: 2.7rem;
+}
 
 /* Modal form */
 
@@ -208,12 +212,15 @@ main {
   color: #fff;
   padding-top: 10px;
   box-shadow: 0px 10px 10px black;
-  }
+}
 
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  transform: scale(1);
 }
+
+/*rajout de l'animation pour les messages d'erreur*/
 
 label {
   font-family: var(--font-default);
@@ -227,6 +234,19 @@ input {
   border: 0.8px solid #ccc;
   outline: none;
 }
+
+.input-valid {
+  border: 2px solid #279e7a;
+}
+.input-error {
+  border: 2px solid #fe142f;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+  }
+
 .text-control {
   margin: 0;
   padding: 8px;
@@ -261,35 +281,33 @@ input {
 /*displayrajout cadre rouge et cadre vert*/
 
 input {
-  transition-duration:(0,2s);
+  transition-duration: (0.2s);
 }
-input:focus:invalid{
-  border:red solid 2px;
-}
-input:focus:invalid{
-  display:block;
+input:focus:invalid {
+  border: red solid 2px;
+  display: block;
   color: #e54858;
 }
 
 input:focus:valid {
-  border:green solid 2px;
+  border: green solid 2px;
 }
-input#end {
-  border:red;
+input.button {
+  border: red;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: red;
 }
 
-input[type=submit]#submit, input[type=submit]#end
-{
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    border:red;
+input.button:focus {
+  border: none;
 }
- 
-input[type=submit]#submit + br
-{
-    display: none;}
+
+input[type="submit"]#submit + br {
+  display: none;
+}
 
 .checkbox-label,
 .checkbox2-label {
@@ -363,8 +381,8 @@ input[type=submit]#submit + br
   height: 32px;
   opacity: 1;
   cursor: pointer;
-  transform: scale(0.7);
 }
+
 .close:before,
 .close:after {
   position: absolute;
@@ -381,10 +399,9 @@ input[type=submit]#submit + br
   transform: rotate(-45deg);
 }
 
-//rajout de la modal fin btn_end
+/*rajout de la modal fin btn_end*/
 .btn-submit,
-.btn-signup,
-.btn-end {
+.btn-signup, .btn-end {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -396,12 +413,8 @@ input[type=submit]#submit + br
   border: 0;
 }
 
-.btn-end {
-  display:none;
-}
-
 .btn-signup {
-  border:red;
+  border: red;
 }
 
 /* custom select styles */
@@ -515,7 +528,6 @@ input[type=submit]#submit + br
   width: 146%;
   font-weight: normal;
   margin-top: 57px;
-  
 }
 .btn-signup {
   outline: none;
@@ -568,7 +580,7 @@ footer {
   .hero-headline {
     font-size: 3rem;
     white-space: normal;
-    font-weight: bolder ;
+    font-weight: bolder;
   }
   .hero-text {
     width: unset;
@@ -598,6 +610,3 @@ footer {
     opacity: 1;
   }
 }
-
-// correction 
-

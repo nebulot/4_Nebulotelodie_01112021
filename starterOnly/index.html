@@ -17,10 +17,10 @@
     </div>
     <div class="main-navbar">
 
-      <a href="#" class="active  "><span>Détails de l'évènement</span></a>
-      <a href="#" class= "active "><span>À propos</span></a>
-      <a href="#"class= "active "><span>Contact</span></a>
-      <a href="#"class= "active "><span>Évènements passés</span></a>
+      <a href="#" class="active"><span>Détails de l'évènement</span></a>
+      <a href="#"><span>À propos</span></a>
+      <a href="#"><span>Contact</span></a>
+      <a href="#"><span>Évènements passés</span></a>
       <a href="javascript:void(0);" class="icon" onclick="editNav()">
         <i class="fa fa-bars style"></i>
       </a>
@@ -36,7 +36,6 @@
           Marathon national<br>
           de jeux vidéos
         </h1>
-
         <p class="hero-text">
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
           aux réservations... Places limitées !
@@ -55,43 +54,42 @@
       </button>
     </div>
 
+
     <div class="bground">
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form id="formulaire" name="reserve" action="index.html" method="get" onsubmit="return validate();"
-            novalidate>
+          <form id="formulaire" name="reserve" action="index.html" method="get" onsubmit="validate();">
 
             <div class="formData">
               <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first" required /><br>
-              <div id="firstError" class="error"></div>
+              <input class="text-control" type="text" id="first" name="first" /><br>
+              <span class="error"></span>
             </div>
 
             <div class="formData">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" minlength="2" required /><br>
-              <div id="lastError" class="error"></div>
+              <input class="text-control" type="text" id="last" name="last" /><br>
+              <span class="error"></span>
             </div>
 
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" required
-                placeholder="mail@domain.com" /><br>
-              <div id="emailError" class="error"></div>
+              <input class="text-control" type="email" id="email" name="email" placeholder="mail@domain.com" /><br>
+              <span class="error"></span>
             </div>
 
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
-              <input class="text-control" type="date" id="birthdate" name="birthdate" required />
-              <div id="birthdateError" class="error"></div>
+              <input class="text-control" type="date" id="birthdate" name="birthdate" />
+              <span class="error"></span>
             </div>
 
 
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
-              <div id="quantityError" class="error"></div>
+              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" />
+              <span class="error"></span>
             </div>
 
 
@@ -120,29 +118,30 @@
               <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
               <label class="checkbox-label" for="location6">
                 <span class="checkbox-icon"></span>
-                Portland</label>
+                Portland</label><br>
+              <span class="error"></span>
             </div>
-            <div id="locationError" class="error"></div>
+
 
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
+              <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label><br>
-              <div id="conditionError" class="error"></div><br>
+              <span class="error"></span>
 
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">
                 <span class="checkbox-icon"></span>
                 Je souhaite être prévenu des prochains évènements.
-              </label>
-              <br>
+              </label><br>
             </div>
-            <input class="button btn-submit" id="submit" type="submit" value="C'est parti" /><br>
+            <input class="button btn-submit" type="submit" value="C'est parti" /><br>
           </form>
         </div>
-        <input class="button btn-end" id="end" type="submit" value="fermer" /><br>
+
+        <input class="button btn-end" id="end" type="submit" value="Fermer" /><br>
 
       </div>
     </div>
