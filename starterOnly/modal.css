@@ -217,8 +217,7 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
-  transform: scale(1);
-}
+  }
 
 /*rajout de l'animation pour les messages d'erreur*/
 
@@ -281,7 +280,7 @@ input {
 /*displayrajout cadre rouge et cadre vert*/
 
 input {
-  transition-duration: (0.2s);
+  transition-duration:0.2s;
 }
 input:focus:invalid {
   border: red solid 2px;
@@ -300,6 +299,7 @@ input.button {
   margin-right: auto;
   border: red;
 }
+
 
 input.button:focus {
   border: none;
@@ -412,7 +412,10 @@ input[type="submit"]#submit + br {
   cursor: pointer;
   border: 0;
 }
-
+  #end {
+    display: none;
+  }
+  
 .btn-signup {
   border: red;
 }

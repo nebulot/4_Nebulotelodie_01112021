@@ -12,7 +12,6 @@ function editNav() {
 // DOM Elements//////
 //(page du formulaire)
 const modalbg = document.querySelector(".bground");
-
 const formData = document.querySelectorAll(".formData");
 
 // constante spanClose (représente .close) pour fermer la modale (X)
@@ -65,7 +64,7 @@ form.addEventListener("submit", (e) => {
 })
 
 // 2) pour que le false passe en true il faut indiquer l'ensemble des inputs de la fonction validate form
-function validate() {
+function validate() { 
   validFirst();
   validLast();
   validEmail();
@@ -77,7 +76,7 @@ function validate() {
 
 function validFirst() {
   if (!first.value || first.value.length <= 2) {
-    setErreur(first, "Veuillez saisir au moins 2 caractères.");
+    setErreur(first, "Veuillez saisir au moins 2 caractères.", "firstError");
     return false;
   } else {
     setValid(first);
@@ -87,7 +86,7 @@ function validFirst() {
 
 function validLast() {
   if (!last.value || last.value.length <= 2) {
-    setErreur(last, "Veuillez saisir au moins 2 caractères.");
+    setErreur(last, "Veuillez saisir au moins 2 caractères.", "lastError");
     return false;
   } else {
     setValid(last);
@@ -98,7 +97,7 @@ function validLast() {
 function validEmail() {
   let mailCaractere = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //regex email
   if (!email.value) {
-    setErreur(email, "Veuillez saisir une adresse email valide.");
+    setErreur(email, "Veuillez saisir une adresse email valide.", "emailError");
     return false;
   } else {
     setValid(email);
@@ -109,7 +108,7 @@ function validEmail() {
 function validBirth() {
   if (!birthdate.value) {
     // champ vide
-    setErreur(birthdate, "Veuillez renseigner votre date de naissance.");
+    setErreur(birthdate, "Veuillez renseigner votre date de naissance.", "birthdateError");
     return false;
   } else {
     setValid(birthdate);
@@ -119,7 +118,7 @@ function validBirth() {
 
 function validQuantity() {
   if (!quantity.value) {
-    setErreur(quantity, "Veuillez renseigner une valeur numérique.");
+    setErreur(quantity, "Veuillez renseigner une valeur numérique.", "quantityError");
     return false;
   } else {
     setValid(quantity);
@@ -135,7 +134,7 @@ function validLocation() {
     setValidCheckbox(loc);
     return true;
   } else {
-    setErreurCheckbox(loc, "Veuillez choisir une ville");
+    setErreurCheckbox(loc, "Veuillez choisir une ville", "locationError");
     return false;
   }
 }
@@ -149,7 +148,7 @@ function validCondition() {
   } else {
     setErreurCheckbox(
       condition,
-      "Veuillez vérifier que vous avez accepté les termes et conditions"
+      "Veuillez vérifier que vous avez accepté les termes et conditions", "conditionError"
     );
     return false;
   }
@@ -157,32 +156,29 @@ function validCondition() {
 
 // pour first, last, email, birthdate et quantity
 
-function setErreur(input, message) {
+function setErreur(input, message, idError) {
   //input est déclaré mais il n'a pas de valeur
-  const fromDataInput = input.parentElement;
-  const error = document.querySelector(".error");
+  const error = document.getElementById(idError);
+  console.log(error);
   error.innerText = message;
   input.className = "text-control input-error";
-}
+  }
 
 function setValid(input) {
-  const formDataInput = input.parentElement;
   const error = document.querySelector(".error");
-  error.innerText = "";
   input.className = "text-control input-valid";
-}
+ }
 
-function setErreurCheckbox(input, message) {
-  const formDataInput = input.parentElement;
-  const error = document.querySelector(".error");
-  error.innerText = message;
-}
+ function setErreurCheckbox(input, message, idError){
+   const error = document.getElementById(idError);
+   error.innerText = message;
+   input.className = "checkbox-input input-error";
+ }
 
-function setValidCheckbox(input) {
-  const formDataInput = input.parentElement;
-  const error = document.querySelector(".error");
-  error.innerText = "";
-}
+ function setValidCheckbox(input) {
+   const error = document.querySelector(".error");
+   input.className = "checkbox-input input-valid";
+ }
 
 //valiDer le champs des saisies avec confirmation de saisie "message"
 function sendForm() {
