@@ -74,23 +74,36 @@ function validate() {
   validCondition();
 }
 
+
+
 function validFirst() {
-  if (!first.value || first.value.length <= 2) {
+  let firstCaractere = /^[a-zA-Z]+[^0-9]$/;
+  if (!first.value || first.value.length <= 1 ) {
     setErreur(first, "Veuillez saisir au moins 2 caractères.", "firstError");
     return false;
-  } else {
-    setValid(first);
-    return true;
-  }
-}
+  } else  {
+    if (first.value.match(firstCaractere)){
+      setValid(first);
+      return true;
+    } else {
+        setErreur(first, "Veuillez saisir un prénom valide.", "firstError");
+        return false;
+      }
+    }
+   }
 
 function validLast() {
-  if (!last.value || last.value.length <= 2) {
+  let lastCaractere = /^[a-zA-Z]+[^0-9]$/;
+  if (!last.value || last.value.length <= 1) {
     setErreur(last, "Veuillez saisir au moins 2 caractères.", "lastError");
     return false;
   } else {
-    setValid(last);
+    if(last.value.match(lastCaractere)) {
+      setValid(last);
     return true;
+    } else {
+      setErreur(last, "Veuillez saisir un nom valide.", "lastError")
+    }
   }
 }
 
@@ -166,6 +179,7 @@ function setErreur(input, message, idError) {
 
 function setValid(input) {
   const error = document.querySelector(".error");
+  error.textContent = "";
   input.className = "text-control input-valid";
  }
 
@@ -177,6 +191,7 @@ function setValid(input) {
 
  function setValidCheckbox(input) {
    const error = document.querySelector(".error");
+   error.textContent = "";
    input.className = "checkbox-input input-valid";
  }
 
