@@ -83,7 +83,7 @@ function validFirst() {
     return false;
   } else  {
     if (first.value.match(firstCaractere)){
-      setValid(first);
+      setValid(first, "firstError");
       return true;
     } else {
         setErreur(first, "Veuillez saisir un prénom valide.", "firstError");
@@ -99,7 +99,7 @@ function validLast() {
     return false;
   } else {
     if(last.value.match(lastCaractere)) {
-      setValid(last);
+      setValid(last, "lastError");
     return true;
     } else {
       setErreur(last, "Veuillez saisir un nom valide.", "lastError")
@@ -113,7 +113,7 @@ function validEmail() {
     setErreur(email, "Veuillez saisir une adresse email valide.", "emailError");
     return false;
   } else {
-    setValid(email);
+    setValid(email, "emailError");
     return true;
   }
 }
@@ -124,7 +124,7 @@ function validBirth() {
     setErreur(birthdate, "Veuillez renseigner votre date de naissance.", "birthdateError");
     return false;
   } else {
-    setValid(birthdate);
+    setValid(birthdate, "birthdateError");
     return true;
   }
 }
@@ -134,7 +134,7 @@ function validQuantity() {
     setErreur(quantity, "Veuillez renseigner une valeur numérique.", "quantityError");
     return false;
   } else {
-    setValid(quantity);
+    setValid(quantity, "quantityError");
     return true;
   }
 }
@@ -144,7 +144,7 @@ function validQuantity() {
 function validLocation() {
   let radioCheck = document.querySelector('input[name = "location"]:checked');
   if (radioCheck != null) {
-    setValidCheckbox(loc);
+    setValidCheckbox(loc, "locationError");
     return true;
   } else {
     setErreurCheckbox(loc, "Veuillez choisir une ville", "locationError");
@@ -156,7 +156,7 @@ function validLocation() {
 
 function validCondition() {
   if (condition.checked) {
-    setValidCheckbox(condition);
+    setValidCheckbox(condition, "conditionError");
     return true;
   } else {
     setErreurCheckbox(
@@ -177,9 +177,9 @@ function setErreur(input, message, idError) {
   input.className = "text-control input-error";
   }
 
-function setValid(input) {
-  const error = document.querySelector(".error");
-  error.textContent = "";
+function setValid(input, idError) {
+  const error = document.getElementById(idError);
+  error.innerText = "";
   input.className = "text-control input-valid";
  }
 
@@ -189,9 +189,9 @@ function setValid(input) {
    input.className = "checkbox-input input-error";
  }
 
- function setValidCheckbox(input) {
-   const error = document.querySelector(".error");
-   error.textContent = "";
+ function setValidCheckbox(input, idError) {
+  const error = document.getElementById(idError);
+   error.innerText = "";
    input.className = "checkbox-input input-valid";
  }
 
