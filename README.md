@@ -15,8 +15,8 @@ Mon rôle en tant que développeur Front-End junior dans cette entreprise est d�
 ## 🗂️ Éléments transmis :
 
     🔗  Maquette de la page d’accueil et du formulaire d’inscription :
-![image](https://user-images.githubusercontent.com/93211301/168685074-a5b66647-e429-4a07-a9fe-9afae262a098.png)
-![image](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630)
+[image](https://user-images.githubusercontent.com/93211301/168685074-a5b66647-e429-4a07-a9fe-9afae262a098.png)
+[image](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630)
 
    🔗 Plus d'information en cliquant sur le lien ci-dessous : <br/>
 [Brief](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)<br/>
@@ -36,11 +36,11 @@ Mon rôle en tant que développeur Front-End junior dans cette entreprise est d�
 
 ## 🔧 Les étapes imposées :
 
-1️⃣ TODO : fermer la modale
-2️⃣ Implémenter les entrées du formulaire
-3️⃣ Ajouter validation ou messages d'erreur
-4️⃣ Ajouter une confirmation après l'envoi réussi du formulaire
-5️⃣ Tester manuellement toutes les fonctionnalités
+1️⃣ TODO : fermer la modale <br/>
+2️⃣ Implémenter les entrées du formulaire <br/>
+3️⃣ Ajouter validation ou messages d'erreur <br/>
+4️⃣ Ajouter une confirmation après l'envoi réussi du formulaire <br/>
+5️⃣ Tester manuellement toutes les fonctionnalités <br/>
 
 
 
