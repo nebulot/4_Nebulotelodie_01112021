@@ -27,14 +27,13 @@ Mon rôle en tant que développeur Front-End junior dans cette entreprise est d�
  
 
 ## 📋 Cahier des charges :
-
-    - Forkez le repository en suivant le lien ci-dessus.
-    - Utilisez Visual Studio Code pour travailler sur les fichiers séparés en HTML, CSS, et JavaScript. 
-    Le code doit être commenté de manière claire et détaillée pour chaque fonction, classe et modification importante.
-    - Aucune dépendance ne doit être utilisée, à l'exception de ce qui est fourni dans les fichiers de base. 
-    - Ne pas utiliser jQuery, Bootstrap ou toute autre librairie externe.
-    - Effectuez des tests manuels pour valider les fonctionnalités du formulaire, 
-    les entrées utilisateurs et la  responsivité de la page.
+- Forkez le repository en suivant le lien ci-dessus.
+- Utilisez Visual Studio Code pour travailler sur les fichiers séparés en HTML, CSS, et JavaScript. 
+Le code doit être commenté de manière claire et détaillée pour chaque fonction, classe et modification importante.
+- Aucune dépendance ne doit être utilisée, à l'exception de ce qui est fourni dans les fichiers de base. 
+- Ne pas utiliser jQuery, Bootstrap ou toute autre librairie externe.
+- Effectuez des tests manuels pour valider les fonctionnalités du formulaire, <br/>
+  les entrées utilisateurs et la  responsivité de la page.
 
 ## 🔧 Les étapes imposées :
 
