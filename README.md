@@ -1,33 +1,50 @@
-### Projet 4 de la formation de Developpeur Front-End, OpenClassroom
-
+### Projet Game On
 GAME ON est une société spécialisée dans les conférences et les concours de jeux.
 
-## Le projet :
-Après l'étude de commentaires négatifs de la part de certains utilisateurs, la société a décidé de simplifier la nouvelle page d'acceuil et d'inscription aux concours (formulaire à remplir).
-Une premiere personne "Jason", anciennement programmateur pour l'entreprise à travailler sur la structure HTML et le style CSS (déjà fournit) sur la base de maquettes Figma (design proposé par un designer UI). Il a également ajouté le Javascript pour le lancement de la maquette (lien ci-dessous) :
+## 🎯 Objectif :
 
-     🔗 https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630
+Le projet consiste à simplifier la page d'accueil et d'inscription aux concours de la société Game On, spécialisée dans les conférences et concours de jeux. 
+Après avoir étudié les commentaires négatifs d’utilisateurs, la société a décidé d’améliorer l’expérience utilisateur en simplifiant ces pages. 
+Une première personne, "Jason", anciennement programmeur pour l'entreprise, a travaillé sur la structure HTML et le style CSS de la page en se basant 
+sur des maquettes Figma (design fourni par un designer UI). 
+Il a également ajouté le code JavaScript pour la maquette, mais il reste du travail à faire pour rendre le formulaire pleinement fonctionnel.
 
-Mon travaille en tant que nouveau développeur Front-End junior de l'entreprise consiste à ajouter le code JavaScript manquant pour que le formulaire soit pleinement fonctionnel.
+Mon rôle en tant que développeur Front-End junior dans cette entreprise est d’ajouter le code JavaScript manquant pour assurer la fonctionnalité complète du formulaire.
+(formulaire à remplir).
 
-## Consignes générales :
+## 🗂️ Éléments transmis :
 
-1️⃣ Forkez le repositorie en cliquant sur le lien fournit (ci-dessous) :<br/>
-    🔗 https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/ <br/>
-2️⃣ Utilisation de VisualStudio Code<br/>
-Les fichiers HTML, CSS et JavaScript sont séparés et le code doit être commenté à chaque modification (décrire chaque fonction et chaque classe, et plus de détails sur certaines parties si nécessaire).<br/>
-3️⃣ Aucune dépendance;<br/>
-4️⃣Aucune utilisation de jQuery, Boostrap et autre librairie.<br/>
-5️⃣Tester manuellement les fonctionnalités, les entrées de formulaire et l'affichage responsive.<br/>
+    🔗  Maquette de la page d’accueil et du formulaire d’inscription :
+![image](https://user-images.githubusercontent.com/93211301/168685074-a5b66647-e429-4a07-a9fe-9afae262a098.png)
+![image](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630)
 
-## Les Etapes imposées :
+   🔗 Plus d'information en cliquant sur le lien ci-dessous : <br/>
+[Brief](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)<br/>
 
-#1 TODO : fermer la modale <br/>
-#2 Implémenter entrées du formulaire <br/>
-#3 Ajouter validation ou messages d'erreur <br/>
-#4 Ajouter confirmation quand envoie réussi <br/>
-#5 Tests Manuels <br/>
+   🔗 W3C Validator : <br/>
+[Correction W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fnebulot.github.io%2FNebulotelodie_GameOn%2F#file)<br/>
+ 
 
-Plus d'information en cliquant sur le lien ci-dessous : <br/>
- 🔗 https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues <br/>
+## 📋 Cahier des charges :
+
+    - Forkez le repository en suivant le lien ci-dessus.
+    - Utilisez Visual Studio Code pour travailler sur les fichiers séparés en HTML, CSS, et JavaScript.<br/>
+    Le code doit être commenté de manière claire et détaillée pour chaque fonction, classe et modification importante.
+    - Aucune dépendance ne doit être utilisée, à l'exception de ce qui est fourni dans les fichiers de base.
+    - Ne pas utiliser jQuery, Bootstrap ou toute autre librairie externe.
+    - Effectuez des tests manuels pour valider les fonctionnalités du formulaire, les entrées utilisateurs et la responsivité de la page.
+
+## 🔧 Les étapes imposées :
+
+1️⃣ TODO : fermer la modale
+2️⃣ Implémenter les entrées du formulaire
+3️⃣ Ajouter validation ou messages d'erreur
+4️⃣ Ajouter une confirmation après l'envoi réussi du formulaire
+5️⃣ Tester manuellement toutes les fonctionnalités
+
+
+
+
+
+
 
