@@ -3,14 +3,13 @@ GAME ON est une société spécialisée dans les conférences et les concours de
 
 ## 🎯 Objectif :
 
-Le projet consiste à simplifier la page d'accueil et d'inscription aux concours de la société Game On, spécialisée dans les conférences et concours de jeux. 
-Après avoir étudié les commentaires négatifs d’utilisateurs, la société a décidé d’améliorer l’expérience utilisateur en simplifiant ces pages. 
-Une première personne, "Jason", anciennement programmeur pour l'entreprise, a travaillé sur la structure HTML et le style CSS de la page en se basant 
-sur des maquettes Figma (design fourni par un designer UI). 
-Il a également ajouté le code JavaScript pour la maquette, mais il reste du travail à faire pour rendre le formulaire pleinement fonctionnel.
+Le projet consiste à simplifier la page d'accueil et d'inscription aux concours de la société Game On, spécialisée dans les conférences et concours de jeux. <br/>
+Après avoir étudié les commentaires négatifs d’utilisateurs, la société a décidé d’améliorer l’expérience utilisateur en simplifiant ces pages. <br/>
+Une première personne, "Jason", anciennement programmeur pour l'entreprise, a travaillé sur la structure HTML et le style CSS de la page en se basant sur des maquettes Figma (design fourni par un designer UI). <br/>
+Il a également ajouté le code JavaScript pour la maquette, mais il reste du travail à faire pour rendre le formulaire pleinement fonctionnel. <br/>
 
-Mon rôle en tant que développeur Front-End junior dans cette entreprise est d’ajouter le code JavaScript manquant pour assurer la fonctionnalité complète du formulaire.
-(formulaire à remplir).
+Mon rôle en tant que développeur Front-End junior dans cette entreprise est d’ajouter le code JavaScript manquant pour assurer la fonctionnalité complète du formulaire.<br/>
+(formulaire à remplir). <br/>
 
 ## 🗂️ Éléments transmis :
 
@@ -30,11 +29,12 @@ Mon rôle en tant que développeur Front-End junior dans cette entreprise est d�
 ## 📋 Cahier des charges :
 
     - Forkez le repository en suivant le lien ci-dessus.
-    - Utilisez Visual Studio Code pour travailler sur les fichiers séparés en HTML, CSS, et JavaScript.<br/>
-    Le code doit être commenté de manière claire et détaillée pour chaque fonction, classe et modification importante.
-    - Aucune dépendance ne doit être utilisée, à l'exception de ce qui est fourni dans les fichiers de base.
-    - Ne pas utiliser jQuery, Bootstrap ou toute autre librairie externe.
-    - Effectuez des tests manuels pour valider les fonctionnalités du formulaire, les entrées utilisateurs et la responsivité de la page.
+    - Utilisez Visual Studio Code pour travailler sur les fichiers séparés en HTML, CSS, et JavaScript. <br/>
+    Le code doit être commenté de manière claire et détaillée pour chaque fonction, classe et modification importante.<br/>
+    - Aucune dépendance ne doit être utilisée, à l'exception de ce qui est fourni dans les fichiers de base. <br/>
+    - Ne pas utiliser jQuery, Bootstrap ou toute autre librairie externe.<br/>
+    - Effectuez des tests manuels pour valider les fonctionnalités du formulaire, <br/>
+    les entrées utilisateurs et la  responsivité de la page.
 
 ## 🔧 Les étapes imposées :
 
