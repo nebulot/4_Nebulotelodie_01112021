@@ -15,11 +15,13 @@ Mon rôle en tant que développeur Front-End junior dans cette entreprise est d�
 ## 🗂️ Éléments transmis :
 
     🔗  Maquette de la page d’accueil et du formulaire d’inscription :
-[image](https://user-images.githubusercontent.com/93211301/168685074-a5b66647-e429-4a07-a9fe-9afae262a098.png)
-[image](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630)
+<img src="https://user-images.githubusercontent.com/93211301/168685074-a5b66647-e429-4a07-a9fe-9afae262a098.png" />
+
+
 
    🔗 Plus d'information en cliquant sur le lien ci-dessous : <br/>
 [Brief](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)<br/>
+[Figma maquette](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630)<br/>
 
    🔗 W3C Validator : <br/>
 [Correction W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fnebulot.github.io%2FNebulotelodie_GameOn%2F#file)<br/>
